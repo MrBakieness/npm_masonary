@@ -1,0 +1,26 @@
+.mason_container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+.mason_container:before,
+.mason_container:after {
+    content: "";
+    flex-basis: 100%;
+    width: 0;
+    order: 2;
+}
+
+.mason_item {
+    width: 48%;
+    margin: 20px 1%;
+}
+
+.mason_item:nth-child(2n+1) {
+    order: 1;
+}
+
+.mason_item:nth-child(2n) {
+    order: 2;
+}
