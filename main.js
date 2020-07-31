@@ -27,12 +27,13 @@ window.masonary = (function () {
                 if (i % 2 === 0) { // index is even
                     ar_even.push(items[i]);
 
-                    col_height_even += this.getHeight(items[i]);;
-                }
-                if (i % 2 != 0) { // index is odd
+                    col_height_even += this.getHeight(items[i]);
+                    console.log(this.getHeight(items[i]));
+                } else {
                     ar_odd.push(items[i]);
 
-                    col_height_odd += this.getHeight(items[i]);;
+                    col_height_odd += this.getHeight(items[i]);
+                    console.log(this.getHeight(items[i]));
                 }
             }
 
