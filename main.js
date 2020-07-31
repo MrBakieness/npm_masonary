@@ -1,11 +1,10 @@
 'use strict'
+const url = "../node_modules/@mrbakieness/npm_masonary/main.css";
+document.head.innerHTML += `<link type="text/css" rel="stylesheet" href=${url}>`;
 
 window.masonary = (function () {
     class Mason {
         constructor(container, item) {
-            const url = "./main.css";
-            document.head.innerHTML += `<link type="text/css" rel="stylesheet" href=${url}>`;
-
             this.conatiner = container;
             this.items = item;
 
@@ -36,6 +35,10 @@ window.masonary = (function () {
                     col_height_odd += this.getHeight(items[i]);;
                 }
             }
+
+            console.log(col_height_odd);
+            console.log(col_height_even);
+
 
             if (col_height_even >= col_height_odd) {
                 container.style.height = col_height_even + 20 + 'px';
