@@ -14,7 +14,6 @@
 
 .mason_item {
     width: 48%;
-    margin: 20px 1%;
 }
 
 .mason_item:nth-child(2n+1) {
