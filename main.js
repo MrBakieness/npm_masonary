@@ -4,7 +4,7 @@ document.head.innerHTML += `<link type="text/css" rel="stylesheet" href=${url}>`
 
 window.masonary = (function () {
     class Mason {
-        constructor(container, item) {
+        constructor(container, item, m) {
             this.conatiner = container;
             this.items = item;
 
@@ -12,12 +12,13 @@ window.masonary = (function () {
 
             for (let i = 0; i < this.items.length; i++) {
                 this.items[i].classList.add('mason_item');
+                this.items[i].style.margin(margin + 'px');
             }
 
-            this.init(this.conatiner, this.items);
+            this.init(this.conatiner, this.items, m);
         }
         // ========= UTILS =========
-        init(container, items) {
+        init(container, items, margin) {
             let ar_even = [];
             let col_height_even = 0;
             let ar_odd = [];
@@ -27,19 +28,13 @@ window.masonary = (function () {
                 if (i % 2 === 0) { // index is even
                     ar_even.push(items[i]);
 
-                    col_height_even += this.getHeight(items[i]);
-                    console.log(this.getHeight(items[i]));
+                    col_height_even += this.getHeight(items[i], margin);
                 } else {
                     ar_odd.push(items[i]);
 
-                    col_height_odd += this.getHeight(items[i]);
-                    console.log(this.getHeight(items[i]));
+                    col_height_odd += this.getHeight(items[i], margin);
                 }
             }
-
-            console.log(col_height_odd);
-            console.log(col_height_even);
-
 
             if (col_height_even >= col_height_odd) {
                 container.style.height = col_height_even + 20 + 'px';
@@ -47,19 +42,14 @@ window.masonary = (function () {
                 container.style.height = col_height_odd + 20 + 'px';
             }
         }
-        getHeight(el){
-            let margin = parseInt(getComputedStyle(el).marginTop) + parseInt(getComputedStyle(el).marginBottom);
+        getHeight(el, margin){
             let height = parseInt(getComputedStyle(el).height);
-            console.log(el);
-            console.log(getComputedStyle(el));
-            console.log(getComputedStyle(el).marginBlockEnd);
-            console.log('margin? ' + parseInt(getComputedStyle(el).marginTop));
-            console.log('height? ' + parseInt(getComputedStyle(el).height))
-            return (margin + height);
+
+            return ((margin * 2) + height);
         }
     }
 
-    let selector = (c, i) => {
+    let selector = (c, i, m = 20) => {
         let container = document.querySelector(c);
         if(container == null){
             return console.log('No container found with selector "' + c + '"');
@@ -68,7 +58,7 @@ window.masonary = (function () {
         if(items.length == 0){
             return console.log('No items found with selector "' + i + '" in container');
         }
-        return new Mason(container, items);
+        return new Mason(container, items, m);
     }
 
     return selector;
