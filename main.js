@@ -50,6 +50,7 @@ window.masonary = (function () {
         getHeight(el){
             let margin = parseInt(getComputedStyle(el).marginTop) + parseInt(getComputedStyle(el).marginBottom);
             let height = parseInt(getComputedStyle(el).height);
+            console.log('margin? ' + margin);
             return (margin + height);
         }
     }
