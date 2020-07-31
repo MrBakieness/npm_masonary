@@ -12,10 +12,6 @@
     order: 2;
 }
 
-.mason_item {
-    width: 48%;
-}
-
 .mason_item:nth-child(2n+1) {
     order: 1;
 }
