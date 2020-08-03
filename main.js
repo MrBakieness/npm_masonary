@@ -70,10 +70,9 @@ window.masonary = (function () {
         }
     }
 
-    let selector = (c, i, m = 20) => {
+    let selector = (c, i, m = 20, columns = 2) => {
         console.log('selector');
         console.log(columns);
-
         let container = document.querySelector(c);
         if(container == null){
             return console.log('No container found with selector "' + c + '"');
@@ -82,20 +81,9 @@ window.masonary = (function () {
         if(items.length == 0){
             return console.log('No items found with selector "' + i + '" in container');
         }
-        return new Mason(container, items, m);
+        return new Mason(container, items, m, columns);
     }
 
     return selector;
 }());
 
-let selector = (c, i, m = 20, columns = 2) => {
-    let container = document.querySelector(c);
-    if(container == null){
-        return console.log('No container found with selector "' + c + '"');
-    }
-    let items = container.querySelectorAll(i);
-    if(items.length == 0){
-        return console.log('No items found with selector "' + i + '" in container');
-    }
-    return new Mason(container, items, m, columns);
-}
