@@ -13,7 +13,7 @@ window.masonary = (function () {
             for (let i = 0; i < this.items.length; i++) {
                 this.items[i].classList.add('mason_item');
                 this.items[i].style.margin = m + 'px';
-                this.items[i].style.width = Math.floor(100 / 3) + '%';
+                this.items[i].style.width = Math.floor(100 / columns) + '%';
             }
 
             this.init(this.conatiner, this.items, m, columns);
