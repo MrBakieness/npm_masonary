@@ -25,12 +25,14 @@ window.masonary = (function () {
             let col_height_odd = 0;
             let selector = '';
 
+            console.log(columns);
             if (columns < 2){
                 columns = 2;
             }
         
             for (var i = 0; i < columns; i++) {
-                if(i = columns){
+                console.log(i);
+                if(i == columns){
                     selector = '.mason_item:nth-child(' + columns + 'n)';
                 }
                 selector = '.mason_item:nth-child(' + columns + 'n + ' + i + ')';
