@@ -7,13 +7,17 @@ window.masonary = (function () {
         constructor(container, item, m, columns) {
             this.conatiner = container;
             this.items = item;
+            this.columns = columns;
 
             this.conatiner.classList.add('mason_container');
 
             for (let i = 0; i < this.items.length; i++) {
                 this.items[i].classList.add('mason_item');
                 this.items[i].style.margin = m + 'px';
+                console.log(columns);
                 this.items[i].style.width = Math.floor(100 / columns) + '%';
+                console.log('here');
+
             }
 
             this.init(this.conatiner, this.items, m, columns);
