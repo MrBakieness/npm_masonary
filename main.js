@@ -34,7 +34,7 @@ window.masonary = (function () {
                 columns = 2;
             }
         
-            for (var i = 0; i < columns; i++) {
+            for (var i = 1; i < columns; i++) {
                 console.log(i);
                 if(i == columns){
                     selector = '.mason_item:nth-child(' + columns + 'n)';
