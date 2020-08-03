@@ -31,9 +31,9 @@ window.masonary = (function () {
         
             for (var i = 0; i < columns; i++) {
                 if(i = columns){
-                    selector = ':' + columns + 'n';
+                    selector = ':nth-child(' + columns + 'n)';
                 }
-                selector = ':' + columns + 'n + ' + i;
+                selector = ':nth-child(' + columns + 'n + ' + i + ')';
         
                 el = querySelector('.mason_item' + selector);
                 el.style.order = i;
