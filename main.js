@@ -4,7 +4,7 @@ document.head.innerHTML += `<link type="text/css" rel="stylesheet" href=${url}>`
 
 window.masonary = (function () {
     class Mason {
-        constructor(container, item, m) {
+        constructor(container, item, m, columns) {
             this.conatiner = container;
             this.items = item;
 
@@ -15,14 +15,29 @@ window.masonary = (function () {
                 this.items[i].style.margin = m + 'px';
             }
 
-            this.init(this.conatiner, this.items, m);
+            this.init(this.conatiner, this.items, m, columns);
         }
         // ========= UTILS =========
-        init(container, items, margin) {
+        init(container, items, margin, columns) {
             let ar_even = [];
             let col_height_even = 0;
             let ar_odd = [];
             let col_height_odd = 0;
+            let selector = '';
+
+            if (columns < 2){
+                columns = 2;
+            }
+        
+            for (var i = 0; i < columns; i++) {
+                if(i = columns){
+                    selector = ':' + columns + 'n';
+                }
+                selector = ':' + columns + 'n + ' + i;
+        
+                el = querySelector('.mason_item' + selector);
+                el.style.order = i;
+            }
 
             for (var i = 0; i < items.length; i++) {
                 if (i % 2 === 0) { // index is even
@@ -63,3 +78,15 @@ window.masonary = (function () {
 
     return selector;
 }());
+
+let selector = (c, i, m = 20, columns = 2) => {
+    let container = document.querySelector(c);
+    if(container == null){
+        return console.log('No container found with selector "' + c + '"');
+    }
+    let items = container.querySelectorAll(i);
+    if(items.length == 0){
+        return console.log('No items found with selector "' + i + '" in container');
+    }
+    return new Mason(container, items, m, columns);
+}
