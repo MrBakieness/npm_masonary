@@ -11,11 +11,3 @@
     width: 0;
     order: 2;
 }
-
-.mason_item:nth-child(2n+1) {
-    order: 1;
-}
-
-.mason_item:nth-child(2n) {
-    order: 2;
-}
