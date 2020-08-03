@@ -41,7 +41,7 @@ window.masonary = (function () {
                 }
                 selector = '.mason_item:nth-child(' + columns + 'n + ' + i + ')';
                 console.log(selector);
-                el = querySelector(selector);
+                el = document.querySelector(selector);
                 el.style.order = i;
             }
 
