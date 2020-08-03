@@ -5,6 +5,9 @@ document.head.innerHTML += `<link type="text/css" rel="stylesheet" href=${url}>`
 window.masonary = (function () {
     class Mason {
         constructor(container, item, m, columns) {
+            console.log('constructor');
+            console.log(columns);
+
             this.conatiner = container;
             this.items = item;
 
@@ -25,6 +28,7 @@ window.masonary = (function () {
             let col_height_odd = 0;
             let selector = '';
 
+            console.log('init');
             console.log(columns);
             if (columns < 2){
                 columns = 2;
@@ -67,6 +71,9 @@ window.masonary = (function () {
     }
 
     let selector = (c, i, m = 20) => {
+        console.log('selector');
+        console.log(columns);
+
         let container = document.querySelector(c);
         if(container == null){
             return console.log('No container found with selector "' + c + '"');
