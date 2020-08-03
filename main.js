@@ -31,11 +31,11 @@ window.masonary = (function () {
         
             for (var i = 0; i < columns; i++) {
                 if(i = columns){
-                    selector = ':nth-child(' + columns + 'n)';
+                    selector = '.mason_item:nth-child(' + columns + 'n)';
                 }
-                selector = ':nth-child(' + columns + 'n + ' + i + ')';
-        
-                el = querySelector('.mason_item' + selector);
+                selector = '.mason_item:nth-child(' + columns + 'n + ' + i + ')';
+                console.log(selector);
+                el = querySelector(selector);
                 el.style.order = i;
             }
 
