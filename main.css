@@ -1,13 +1,15 @@
 .mason_container {
     display: flex;
+    align-content: space-between;
+    margin: 0 auto;
     flex-flow: column wrap;
-    align-content: center;
 }
 
-.mason_container:before,
-.mason_container:after {
-    content: "";
+/* Force new columns */
+.break {
     flex-basis: 100%;
     width: 0;
-    order: 2;
+    margin: 0;
+    content: "";
+    padding: 0;
 }

@@ -78,10 +78,10 @@ window.masonary = (function () {
             }
 
             let width = 'calc( ' + parseInt((100 / col)) + '% - ' + mar + ' )';
-
             for (let i = 0; i < items.length; i++) {
                 items[i].classList.add('mason_item');
                 items[i].style.width = width;
+                items[i].style.marginBottom = mar;
             }
 
             return col;
