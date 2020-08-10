@@ -1,5 +1,5 @@
 {
-  "name": "@mrbakieness/npm_masonary",
+  "name": "@mrbakieness/npm_masonry",
   "version": "1.3.7",
   "description": "",
   "main": "index.js",
@@ -8,12 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrBakieness/npm_masonary"
+    "url": "git+https://github.com/MrBakieness/npm_masonry"
   },
   "author": "James",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrBakieness/npm_test/issues"
+    "url": "https://github.com/MrBakieness/npm_masonry/issues"
   },
-  "homepage": "https://github.com/MrBakieness/npm_test#readme"
+  "homepage": "https://github.com/MrBakieness/npm_masonry#readme",
+  "keywords": ["CSS", "JavaScript", "Masonry"]
 }
