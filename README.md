@@ -2,7 +2,7 @@
 
 ![Masonry][logo]
 
-[logo]: https://github.com/MrBakieness/npm_masonary/raw/master/logo.png "Logo Title Text 2"
+[logo]: https://raw.githubusercontent.com/MrBakieness/npm_masonary/master/logo.png?token=AQHUD4WQQZQLFBQVYAARU3S7GE6I4 "Logo Title Text 2"
 
 ### Install
 
